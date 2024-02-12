@@ -5,7 +5,7 @@ import removeIcon from '../Assets/cart_cross_icon.png'
 
 export const CartItems = () => {
 
-    const { all_product, cartItems, removeFromCart } = useContext(ShopContext)
+    const {getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext)
     return (
         <div className='cartItems'>
             <div className="cartitems-formate-main">
@@ -14,7 +14,7 @@ export const CartItems = () => {
                 <p>Price</p>
                 <p>Quantity</p>
                 <p>Total</p>
-                <p>Remve</p>
+                <p>Remove</p>
             </div>
             <hr />
          {all_product.map((e)=>{
@@ -40,7 +40,7 @@ export const CartItems = () => {
                 <div>
                     <div className="cartitemstotalitems">
                         <p>Subtotal</p>
-                        <p>Rs.{0}</p>
+                        <p>Rs.{getTotalCartAmount()}</p>
                     </div>
                     <hr />
                     <div className="cartitemstotalitems">
@@ -50,7 +50,7 @@ export const CartItems = () => {
                     <hr />
                     <div className="cartitemstotalitems">
                         <h3>Total</h3>
-                        <h3>Rs. {}0</h3>
+                        <h3>Rs.{getTotalCartAmount()}</h3>
                     </div>
                 </div>
 
